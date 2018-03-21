@@ -1,0 +1,11 @@
+<h1>Todas las reservas</h1>
+
+<% @reservations.each do |reservation| %>
+
+  <h3> Reserva nro: <%= reservation.id %> </h3>
+  Seña: <%= reservation.prepaid %>
+  Dia: <%= reservation.date.strftime("%d/%m/%Y") %>
+  Horario: <%= reservation.hour %>hs <br/>
+
+  <%= button_to "Eliminar", reservation, method: :delete %> 
+<% end %>
