@@ -13,11 +13,7 @@ class ReservationsController < ApplicationController
   end
 
   def create
-    @reservation = Reservation.new(
-      date: params[:reservation][:date],
-      hour: params[:reservation][:hour],
-      prepaid: params[:reservation][:prepaid]
-    )
+    @reservation = Reservation.new(article_params)
 
     if @reservation.save
       redirect_to @reservation
@@ -27,13 +23,19 @@ class ReservationsController < ApplicationController
   end
 
   def update
-    
+
   end
 
   def destroy
     @reservation = Reservation.find(params[:id])
     @reservation.destroy
     redirect_to reservations_path
+  end
+
+  private
+
+  def article_params
+    params.require(:reservation).permit(:date, :prepaid, :hour)
   end
 
 end

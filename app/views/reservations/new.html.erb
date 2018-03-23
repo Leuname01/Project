@@ -12,11 +12,11 @@
  </div>
  <div class="form-group">
   <label for="article_body">Hora</label>
-   <%= f.text_field :hour, class: 'form-control' %>
+   <%= f.number_field :hour, class: 'form-control' %>
  </div>
  <div class="form-group">
   <label for="article_body">Seña</label>
-   <%= f.text_field :prepaid, class: 'form-control' %>
+   <%= f.number_field :prepaid, class: 'form-control' %>
  </div>
  <%= f.submit 'Reservar', class: 'btn btn-primary' %>
 <%end%>
