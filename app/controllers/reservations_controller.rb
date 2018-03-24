@@ -22,8 +22,17 @@ class ReservationsController < ApplicationController
     end
   end
 
-  def update
+  def edit
+    @reservation = Reservation.find(params[:id])
+  end
 
+  def update
+    @reservation = Reservation.find(params[:id])
+    if @reservation.update(article_params)
+      redirect_to @reservation
+    else
+      render :edit
+    end
   end
 
   def destroy

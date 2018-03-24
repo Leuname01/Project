@@ -47,3 +47,11 @@
 #input-search {
 	width: 230px;
 }
+
+.action_buttons {
+       display: inline-flex;
+}
+
+.margin_action_buttons {
+       margin-right: 5px
+}
